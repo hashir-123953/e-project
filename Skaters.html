@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AroMedica </title>
+    <link rel="icon" type="image/png" href="logo1.JPG">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+         .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            border: 0;
+        }
+           :root {
+            --primary-bg: #000000;
+            --secondary-bg: #121212;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #ffd700;
+            --accent-red: #ff4d4d;
+            --text-light: #f1f1f1;
+            --text-muted: #cccccc;
+            --card-bg: #1c1c1c;
+            --card-hover: #282828;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Enhanced Navbar */
+        #lux-navbar {
+            background: linear-gradient(90deg, #0a0a0a, #1a1a1a);
+            padding: 12px 0;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid var(--accent-gold);
+            position:relative;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #lux-navbar .navbar-brand {
+            color: var(--accent-gold);
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            font-size: 28px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        #lux-navbar .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 12px;
+            transition: 0.3s;
+            font-size: 16px;
+            position: relative;
+        }
+
+        #lux-navbar .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+
+        #lux-navbar .nav-link.active {
+            color: var(--accent-gold) !important;
+            font-weight: 700;
+        }
+
+        #lux-navbar .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        #lux-navbar .navbar-toggler {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        #lux-navbar .navbar-toggler:focus {
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+        }
+         .glass-lux-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .glass-lux-btn:hover {
+            background: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown-item {
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            padding-left: 25px;
+        }
+ :root {
+    --bg: #000000;           /* main red */
+    --accent: #ffcc00;       /* yellow accent */
+    --dark: #1a1a1a;         /* dark text */
+    --muted: #ffffffcc;      /* muted white */
+    --panel: #ffefdd;        /* light panel for contrast */
+    --radius: 14px;
+    --gap: 18px;
+    --max-width: 1100px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; 
+    color: var(--dark);
+}
+
+.site-footer {
+    background: linear-gradient(180deg, var(--bg) 0%, #121212 100%);
+    color: #fff;
+    padding: 48px 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    box-shadow: 0px 5px 30px #000000;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    width: 100%;
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+     margin-left: 60px;
+}
+
+.footer-brand {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-logo {
+    width: 86px;
+    height: 86px;
+    background-color: #000000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: black;
+    font-size: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    border: solid 3px yellow;
+    transition: 0.3s ease;
+}
+
+.brand-text h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+}
+
+.brand-text p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--gap);
+}
+
+.links-col {
+    min-width: 0;
+}
+
+.links-col h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links-col a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contact {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.contact .hours {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.contact .phone {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.newsletter {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, var(--accent), #f6b400);
+    border: none;
+    color: var(--dark);
+    padding: 10px 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* Social icon animation */
+.socials a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.1);
+  color: gold;
+}
+
+/* Responsive Styles */
+@media (max-width: 880px) {
+    .footer-inner {
+        grid-template-columns: 1fr;  /* Stack columns */
+        padding: 10px;              /* Reduced padding */
+        margin-left: 0;             /* Remove margin for centering */
+    }
+
+    .footer-brand, 
+    .footer-links, 
+    .contact {
+        text-align: center;         /* Center align items */
+        margin-bottom: 20px;       /* Space between sections */
+    }
+
+    .footer-bottom {
+        flex-direction: column;     /* Stack year and socials */
+        gap: 10px; 
+        align-items: center;        /* Center align bottom items */
+        margin-top: 10px;          /* Add spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        width: 70px;  /* Adjust logo size */
+        height: 70px; /* Adjust logo size */
+    }
+
+    .brand-text h3 {
+        font-size: 18px;  /* Adjust title font size */
+    }
+}
+       
+    </style>
+</head>
+<body>
+     <!-- FIXED NAVBAR -->
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="lux-navbar">
+        <div class="container-fluid">
+            <a href="home.html"><img src="img/logo34.png" alt="Logo" width="100" height="60"></a>
+            <a class="navbar-brand" href="home.html">AROMEDICA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                        <a class="nav-link active" href="home.html"><b>Home</b></a>
+                    </li>
+                     <li class="nav-item"><a class="nav-link" href="aboutUss.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cources page.html">Courses</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Poses</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="allposes.html">All Poses</a></li>
+                            <li><a class="dropdown-item" href="type.html">By Type</a></li>
+                            <li><a class="dropdown-item" href="benefitposes.html">By Benefit</a></li>
+                            <li><a class="dropdown-item" href="anatomy.html">By Anatomy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Meditation.html">Meditation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                   </ul>
+                <button class="glass-lux-btn"><a href="signup.html" style="text-decoration: none; color: white;">Sign Up</a></button>
+                <button class="glass-lux-btn"><a href="login.html" style="text-decoration: none; color: white;">Log In</a></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 fade-in-up">
+        <div class="container">
+            <h2 class="section-title text-center" style="color: white;">Guided Meditation for Beginners</h2>
+            <p class="text-center mb-5" style="color: white;">Watch this 10-minute guided meditation to experience the benefits firsthand.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="video-container">
+                        <!-- Embedded YouTube video (placeholder for actual meditation video) -->
+                        <iframe src="video/skeaters.mp4"
+                                title="Guided Meditation for Beginners" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                          </div>
+            </div>
+        </div>
+    </section>
+
+    
+      <!-- Footer -->
+ <!---footer started-->
+ <!-- aromedica Website Footer -->
+ <div class="col-None-12 col-sm-12 col-lg-12">
+    <footer class="site-footer" aria-labelledby="footerHeading" >
+      <div class="container-fluid">
+      <div class="footer-inner">
+        <!-- Brand & short about -->
+         <div class="col-lg-12 col-md-12 col-sm-4">
+        <div class="footer-brand" id="footerHeading">
+          <div class="footer-logo" aria-hidden="true"><a href="home.html">
+            <img src="img/logo34.png" alt="" height="100px">
+           </a></div>
+          <div class="brand-text">
+            <h3><b>AROMEDICA</b></h3>
+            <p>Aerobic exercise is one of the best ways to improve your overall health. It strengthens the heart, increases lung capacity, boosts energy, and helps burn calories effectively.</p>
+            <div style="margin-top:10px;">
+              <span class="price-pill" style="font-family: Georgia, 'Times New Roman', Times, serif;"><a href="#">"Huge Sale: 50% Discount on All Courses!"</a></span>
+            </div>
+          </div>
+        </div>
+  </div>
+        <!-- Quick links -->
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="links-col">
+            <h4>Poses</h4>
+            <ul>
+               <li><a href="mountain.html">Mountain Climbers Pose</a></li>
+            <li><a href="ButtKickers.html">Butt Kickers Pose</a></li>
+            <li><a href="highknee.html">High Knees Pose</a></li>
+            <li><a href="jumping.html">Jumping Jack Pose</a></li>
+            </ul>
+          </div>
+  
+          <div class="links-col">
+            <h4>Company</h4>
+            <ul>
+             <li><a href="cources page.html">Courses</a></li>
+            <li><a href="allposes.html">Poses</a></li>
+            <li><a href="Meditation.html">Meditation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          
+            </ul>
+          </div>
+        </nav>
+  
+        <!-- Contact & newsletter -->
+         <div class="col-lg-12 col-md-10 col-sm-2">
+        <aside class="contact" aria-label="Contact details">
+          <div class="hours"><strong>Store Hours</strong><br>Mon–Sun: 10:00 AM – 11:00 PM</div>
+          <div class="phone">📞 +92 310 276 0338</div>
+          <div style="font-size:13px;color:var(--muted)">Select your favourite Courses.</div>
+  
+          <form class="newsletter" onsubmit="event.preventDefault(); alert('Thanks — you are subscribed!');" aria-label="Subscribe to newsletter">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address"/>
+            <button class="btn-primary" type="submit">Subscribe</button>
+          </form>
+  
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+            <strong>Address</strong>
+            <div>Shop #4, Food Street,karachi</div>
+          </div>
+        </aside>
+  </div>
+        <!-- bottom row -->
+        <div class="footer-bottom" role="contentinfo">
+          <div>&copy; <strong id="yearText"></strong> AROMEDICA. All rights reserved.</div>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.facebook.com/"  target="_blank"title="Facebook">f</a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram">ig</a>
+            <a href="https://www.youtube.com/"  target="_blank" title="Twitter">t</a>
+            <a href="https://www.youtube.com/watch?v=lUuR8jyBsXI"   target="_blank" title="YouTube">yt</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </footer>
+  </div>
+  <!-- footer ended-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
