@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AroMedica </title>
+    <link rel="icon" type="image/png" href="logo1.JPG">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Common styles */
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        #lux-navbar {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(40, 40, 40, 0.9));
+            padding: 15px 0;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .navbar-brand {
+            color: #d4af37 !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 8px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #d4af37 !important;
+        }
+
+        .glass-lux-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .glass-lux-btn:hover {
+            background: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+  /* Luxury Scrollbar */
+
+
+     
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 40px;
+        }
+
+        .onetw {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .line {
+            width: 150px;
+            height: 8px;
+            background: linear-gradient(to right, #d4af37, #f4e04d);
+            margin: 0 auto 25px;
+            border-radius: 5px;
+        }
+
+        .two {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* Course cards container */
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          
+            padding: 20px;
+            max-width: 1400px;
+    
+        }
+
+        /* Course card styles */
+        .course-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 350px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #333;
+            position: relative;
+            margin:10px;
+            gap:10px;
+            
+          
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+            border-color: #d4af37;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .course-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-content h2 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .course-content p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #bbb;
+        }
+
+        .course-content strong {
+            color: #f4e04d;
+        }
+
+        .course-content ul {
+            padding-left: 20px;
+            margin: 10px 0;
+            color: #ddd;
+        }
+
+        .course-content li {
+            margin-bottom: 5px;
+        }
+
+        .bt {
+            margin-top: auto;
+            margin-bottom: 15px;
+        }
+
+        .bt a {
+            display: block;
+            background: linear-gradient(to right, #d4af37, #f4e04d);
+            color: black;
+            padding: 12px 20px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .bt a:hover {
+            background: linear-gradient(to right, #c19b2e, #e6d04a);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* See More Button */
+        .see-more-btn {
+            background: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .see-more-btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Additional info section */
+        .additional-info {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+            margin-top: 15px;
+            padding-top: 0;
+            border-top: 1px dashed transparent;
+        }
+
+        .additional-info.expanded {
+            max-height: 500px; /* Increased to accommodate content */
+            opacity: 1;
+            padding-top: 15px;
+            border-top: 1px dashed #444;
+        }
+
+        .additional-info p {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        .site-footer {
+            background: #111;
+            color: #bbb;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .site-footer p {
+            margin: 10px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .courses-container {
+                padding: 10px;
+                gap: 20px;
+            }
+            
+            .course-card {
+                width: 100%;
+                max-width: 400px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .onetw {
+                font-size: 2.2rem;
+            }
+            
+            .two {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+        }
+      .dropdown-menu {
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown-item {
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            padding-left: 25px;
+        }
+ :root {
+    --bg: #000000;           /* main red */
+    --accent: #ffcc00;       /* yellow accent */
+    --dark: #1a1a1a;         /* dark text */
+    --muted: #ffffffcc;      /* muted white */
+    --panel: #ffefdd;        /* light panel for contrast */
+    --radius: 14px;
+    --gap: 18px;
+    --max-width: 1100px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; 
+    color: var(--dark);
+}
+
+.site-footer {
+    background: linear-gradient(180deg, var(--bg) 0%, #121212 100%);
+    color: #fff;
+    padding: 48px 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    box-shadow: 0px 5px 30px #000000;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    width: 100%;
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+    margin-left: 60px;
+}
+
+.footer-brand {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-logo {
+    width: 86px;
+    height: 86px;
+    background-color: #000000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: black;
+    font-size: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    border: solid 3px yellow;
+    transition: 0.3s ease;
+}
+
+.brand-text h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+}
+
+.brand-text p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--gap);
+}
+
+.links-col {
+    min-width: 0;
+}
+
+.links-col h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links-col a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contact {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.contact .hours {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.contact .phone {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.newsletter {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, var(--accent), #f6b400);
+    border: none;
+    color: var(--dark);
+    padding: 10px 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* Social icon animation */
+.socials a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.1);
+  color: gold;
+}
+
+/* Responsive Styles */
+@media (max-width: 880px) {
+    .footer-inner {
+        grid-template-columns: 1fr;  /* Stack columns */
+        padding: 10px;              /* Reduced padding */
+        margin-left: 0;             /* Remove margin for centering */
+    }
+
+    .footer-brand, 
+    .footer-links, 
+    .contact {
+        text-align: center;         /* Center align items */
+        margin-bottom: 20px;       /* Space between sections */
+    }
+
+    .footer-bottom {
+        flex-direction: column;     /* Stack year and socials */
+        gap: 10px; 
+        align-items: center;        /* Center align bottom items */
+        margin-top: 10px;          /* Add spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        width: 70px;  /* Adjust logo size */
+        height: 70px; /* Adjust logo size */
+    }
+
+    .brand-text h3 {
+        font-size: 18px;  /* Adjust title font size */
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="lux-navbar">
+        <div class="container-fluid">
+            <a href="home.html"><img src="img/logo34.png" alt="Logo" width="100" height="60"></a>
+            <a class="navbar-brand" href="home.html">AROMEDICA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.html"><b>Home</b></a>
+                    </li>
+                     <li class="nav-item"><a class="nav-link" href="aboutUss.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Poses</a>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="dropdown-item text-light" href="allposes.html">All Poses</a></li>
+                            <li><a class="dropdown-item text-light" href="type.html">By Type</a></li>
+                            <li><a class="dropdown-item text-light" href="benefitposes.html">By Benefit</a></li>
+                            <li><a class="dropdown-item text-light" href="anatomy.html">By Anatomy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Meditation.html">Meditation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                   
+                </ul>
+                <button class="glass-lux-btn"><a href="signup.html" style="text-decoration: none; color: white;">Sign Up</a></button>
+                <button class="glass-lux-btn"><a href="login.html" style="text-decoration: none; color: white;">Log In</a></button>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1 class="onetw">Available Courses</h1>
+        <div class="line"></div>
+        <p class="two">Explore our range of courses designed to enhance your skills and wellness journey. Each course is carefully crafted by expert instructors to help you achieve your fitness goals.</p>
+    </header>
+
+    <div class="container">
+    <div class="row courses-container">
+        <!-- Card 1 -->
+        <div class="col-md-4 col-lg-4"> <!-- Use Bootstrap columns -->
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Burpees Exercise">
+                <div class="course-content">
+                    <h2>💪 Burpees Mastery</h2>
+                    <p><strong>Duration:</strong> 30 minutes per session</p>
+                    <p><strong>Instructor:</strong> Alex Johnson</p>
+                    <p><strong>Level:</strong> Intermediate</p>
+
+                    <button class="see-more-btn" onclick="toggleInfo(this)">See More</button>
+                    <div class="additional-info">
+                        <p>Burpees are a high-intensity full-body exercise that improves strength, endurance, and cardiovascular fitness while burning calories effectively.</p>
+                        <p><strong>What you'll learn:</strong></p>
+                        <ul>
+                            <li>Proper burpee form and technique</li>
+                            <li>Breathing patterns for maximum efficiency</li>
+                        </ul>
+                        <p><strong>Equipment needed:</strong> None, just your bodyweight!</p>
+                    </div>
+                    <div class="bt"><a href="contact.html">Enroll Now</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4 col-lg-4"> <!-- Use Bootstrap columns -->
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Yoga Meditation">
+                <div class="course-content">
+                    <h2>🧘 Yoga & Meditation</h2>
+                    <p><strong>Duration:</strong> 45 minutes per session</p>
+                    <p><strong>Instructor:</strong> Priya Sharma</p>
+                    <p><strong>Level:</strong> All Levels</p>
+
+                    <button class="see-more-btn" onclick="toggleInfo(this)">See More</button>
+                    <div class="additional-info">
+                        <p>This course combines traditional yoga postures with mindfulness meditation techniques to improve flexibility, reduce stress, and enhance mental clarity.</p>
+                        <p><strong>What you'll learn:</strong></p>
+                        <ul>
+                            <li>Fundamental yoga poses and their benefits</li>
+                            <li>Breath control (pranayama) techniques</li>
+                        </ul>
+                        <p><strong>Equipment needed:</strong> Yoga mat, comfortable clothing</p>
+                    </div>
+                    <div class="bt"><a href="contact.html">Enroll Now</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 col-lg-4"> <!-- Use Bootstrap columns -->
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="HIIT Workout">
+                <div class="course-content">
+                    <h2>🔥 HIIT for Beginners</h2>
+                    <p><strong>Duration:</strong> 25 minutes per session</p>
+                    <p><strong>Instructor:</strong> Marcus Chen</p>
+                    <p><strong>Level:</strong> Beginner</p>
+
+                    <button class="see-more-btn" onclick="toggleInfo(this)">See More</button>
+                    <div class="additional-info">
+                        <p>High-Intensity Interval Training (HIIT) is a time-efficient workout method that alternates between intense bursts of activity and fixed periods of less-intense activity or rest.</p>
+                        <p><strong>What you'll learn:</strong></p>
+                        <ul>
+                            <li>Basic HIIT principles and structure</li>
+                            <li>Proper warm-up and cool-down techniques</li>
+                        </ul>
+                        <p><strong>Equipment needed:</strong> Exercise mat, timer</p>
+                    </div>
+                    <div class="bt"><a href="contact.html">Enroll Now</a></div>
+                </div>
+            </div>
+        </div>
+
+   
+        <!-- Card 4 -->
+          <div class="col-md-4 col-lg-4">
+        <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Pilates Core">
+            <div class="course-content">
+                <h2>🌟 Pilates Core Strength</h2>
+                <p><strong>Duration:</strong> 40 minutes per session</p>
+                <p><strong>Instructor:</strong> Isabella Rossi</p>
+                <p><strong>Level:</strong> Intermediate</p>
+                
+                <button class="see-more-btn" onclick="toggleInfo(this)">See More</button>
+                <div class="additional-info">
+                    <p>This Pilates course focuses on developing core strength, improving posture, and enhancing overall body awareness through controlled, precise movements.</p>
+                    <p><strong>What you'll learn:</strong></p>
+                    <ul>
+                        <li>Essential Pilates principles (centering, control, flow)</li>
+                        <li>Core engagement and stabilization techniques</li>
+                    </ul>
+                    <p><strong>Equipment needed:</strong> Exercise mat</p>
+                </div>
+                <div class="bt"><a href="contact.html">Enroll Now</a></div>
+            </div>
+        </div>
+</div>
+        <!-- Card 5 -->
+          <div class="col-md-4 col-lg-4">
+        <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mindfulness">
+            <div class="course-content">
+                <h2>🌿 Mindfulness & Stress Relief</h2>
+                <p><strong>Duration:</strong> 20 minutes per session</p>
+                <p><strong>Instructor:</strong> Dr. Samuel Reed</p>
+                <p><strong>Level:</strong> All Levels</p>
+                
+                <button class="see-more-btn" onclick="toggleInfo(this)">See More</button>
+                <div class="additional-info">
+                    <p>Learn evidence-based mindfulness techniques to reduce stress, improve focus, and cultivate emotional resilience in your daily life.</p>
+                    <p><strong>What you'll learn:</strong></p>
+                    <ul>
+                        <li>Foundations of mindfulness practice</li>
+                        <li>Techniques for managing anxiety and stress</li>
+                    </ul>
+                    <p><strong>Equipment needed:</strong> Quiet space, comfortable seating</p>
+                </div>
+                <div class="bt"><a href="contact.html">Enroll Now</a></div>
+            </div>
+        </div>
+</div>
+        <!-- Card 6 -->
+          <div class="col-md-4 col-lg-4">
+        <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Flexibility">
+            <div class="course-content">
+                <h2>🤸 Advanced Flexibility</h2>
+                <p><strong>Duration:</strong> 35 minutes per session</p>
+                <p><strong>Instructor:</strong> Maya Thompson</p>
+                <p><strong>Level:</strong> Advanced</p>
+                
+                <button class="see-more-btn" onclick="toggleInfo(this)">See More</button>
+                <div class="additional-info">
+                    <p>Take your flexibility to the next level with this advanced course focusing on deep stretching techniques, mobility drills, and injury prevention strategies.</p>
+                    <p><strong>What you'll learn:</strong></p>
+                    <ul>
+                        <li>PNF (Proprioceptive Neuromuscular Facilitation) stretching</li>
+                        <li>Dynamic vs. static stretching techniques</li>
+                    </ul>
+                    <p><strong>Equipment needed:</strong> Yoga mat, foam roller, resistance band</p>
+                </div>
+                <div class="bt"><a href="contact.html">Enroll Now</a></div>
+            </div>
+        </div>
+        </div>
+        <!-- Add more cards here in the same manner -->
+    </div>
+</div>
+
+    <!-- Footer -->
+ <!---footer started-->
+ <!-- aromedica Website Footer -->
+ <div class="col-None-12 col-sm-12 col-lg-12">
+    <footer class="site-footer" aria-labelledby="footerHeading" >
+      <div class="container-fluid">
+      <div class="footer-inner">
+        <!-- Brand & short about -->
+         <div class="col-lg-12 col-md-12 col-sm-4">
+        <div class="footer-brand" id="footerHeading">
+          <div class="footer-logo" aria-hidden="true"><a href="home.html">
+            <img src="img/logo34.png" alt="" height="100px">
+           </a></div>
+          <div class="brand-text">
+            <h3><b>AROMEDICA</b></h3>
+            <p>Aerobic exercise is one of the best ways to improve your overall health. It strengthens the heart, increases lung capacity, boosts energy, and helps burn calories effectively.</p>
+            <div style="margin-top:10px;">
+              <span class="price-pill" style="font-family: Georgia, 'Times New Roman', Times, serif;"><a href="#">"Huge Sale: 50% Discount on All Courses!"</a></span>
+            </div>
+          </div>
+        </div>
+  </div>
+        <!-- Quick links -->
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="links-col">
+            <h4>Poses</h4>
+            <ul>
+               <li><a href="mountain.html">Mountain Climbers Pose</a></li>
+            <li><a href="ButtKickers.html">Butt Kickers Pose</a></li>
+            <li><a href="highknee.html">High Knees Pose</a></li>
+            <li><a href="jumping.html">Jumping Jack Pose</a></li>
+            </ul>
+          </div>
+  
+          <div class="links-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="cources page.html">Courses</a></li>
+            <li><a href="allposes.html">Poses</a></li>
+            <li><a href="Meditation.html">Meditation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          
+            </ul>
+          </div>
+        </nav>
+  
+        <!-- Contact & newsletter -->
+         <div class="col-lg-12 col-md-10 col-sm-2">
+        <aside class="contact" aria-label="Contact details">
+          <div class="hours"><strong>Store Hours</strong><br>Mon–Sun: 10:00 AM – 11:00 PM</div>
+          <div class="phone">📞 +92 310 276 0338</div>
+          <div style="font-size:13px;color:var(--muted)">Select your favourite Courses.</div>
+  
+          <form class="newsletter" onsubmit="event.preventDefault(); alert('Thanks — you are subscribed!');" aria-label="Subscribe to newsletter">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address"/>
+            <button class="btn-primary" type="submit">Subscribe</button>
+          </form>
+  
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+            <strong>Address</strong>
+            <div>Shop #4, Food Street,karachi</div>
+          </div>
+        </aside>
+  </div>
+        <!-- bottom row -->
+        <div class="footer-bottom" role="contentinfo">
+          <div>&copy; <strong id="yearText"></strong> AROMEDICA. All rights reserved.</div>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.facebook.com/"  target="_blank"title="Facebook">f</a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram">ig</a>
+            <a href="https://www.youtube.com/"  target="_blank" title="Twitter">t</a>
+            <a href="https://www.youtube.com/watch?v=lUuR8jyBsXI"   target="_blank" title="YouTube">yt</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </footer>
+  </div>
+  <!-- footer ended-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to toggle info for individual cards
+        function toggleInfo(button) {
+            console.log("Button clicked:", button);
+            const additionalInfo = button.nextElementSibling;
+            console.log("Additional info element:", additionalInfo);
+            
+            // Check if it's the right element
+            if (additionalInfo && additionalInfo.classList.contains('additional-info')) {
+                const isExpanded = additionalInfo.classList.contains('expanded');
+                console.log("Is expanded?", isExpanded);
+                
+                if (isExpanded) {
+                    additionalInfo.classList.remove('expanded');
+                    button.textContent = 'See More';
+                    console.log("Collapsed section");
+                } else {
+                    additionalInfo.classList.add('expanded');
+                    button.textContent = 'See Less';
+                    console.log("Expanded section");
+                }
+            } else {
+                console.error("Could not find additional-info element!");
+            }
+        }
+    
+        // DOMContentLoaded for other functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Page loaded");
+            
+            // Add smooth scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Card hover effect enhancement
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
