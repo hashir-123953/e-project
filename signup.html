@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>AroMedica </title>
+         <link rel="icon" type="image/png" href="logo1.JPG">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #FFD700; /* Gold color */
+            margin: 0;
+        }
+
+         /* Navbar styles */
+        #lux-navbar {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(40, 40, 40, 0.9));
+            padding: 15px 0;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .navbar-brand {
+            color: #d4af37 !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 8px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #d4af37 !important;
+        }
+
+        .glass-lux-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .glass-lux-btn:hover {
+            background: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .outer-container {
+            display: flex;
+            justify-content: center;
+           /* Center horizontally */
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.7);
+            border-radius: 10px;
+            overflow:auto ; /* To keep rounded corners */
+           margin-left: 15%;
+           margin-top: 60px;
+        
+        }
+
+        .contact-container, .form-container {
+            /* Ensuring equal styling */
+            padding: 30px; /* Increased padding */
+            flex: 1; /* Takes up equal space */
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5); /* Gold shadow */
+        }
+
+        .contact-container {
+            background-color: #3c3c3c; /* Slightly lighter dark background */
+            margin-right: 20px; /* Space between contact info and form */
+        }
+
+        .form-container {
+            background-color: #333; /* Dark background */
+        }
+
+        h2 {
+            text-align: center;
+            color: #FFD700; /* Gold color */
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 20px); /* Ensure full width with padding */
+            padding: 15px; /* Increased height */
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #FFD700;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #FFD700; /* Gold color */
+            border: none;
+            padding: 15px; /* Increased height */
+            color: black; /* Text color */
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FFDF00; /* Lighter gold on hover */
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .contact-info i {
+            color: #FFD700; /* Gold color */
+            margin-right: 5px;
+        }
+
+        .about-aeromedica {
+            margin-top: 15px;
+            text-align: center;
+        }
+      .dropdown-menu {
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown-item {
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            padding-left: 25px;
+        }
+ :root {
+    --bg: #000000;           /* main red */
+    --accent: #ffcc00;       /* yellow accent */
+    --dark: #1a1a1a;         /* dark text */
+    --muted: #ffffffcc;      /* muted white */
+    --panel: #ffefdd;        /* light panel for contrast */
+    --radius: 14px;
+    --gap: 18px;
+    --max-width: 1100px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; 
+    color: var(--dark);
+}
+
+.site-footer {
+    background: linear-gradient(180deg, var(--bg) 0%, #121212 100%);
+    color: #fff;
+    padding: 48px 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    box-shadow: 0px 5px 30px #000000;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    width: 100%;
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+     margin-left: 60px;
+}
+
+.footer-brand {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-logo {
+    width: 86px;
+    height: 86px;
+    background-color: #000000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: black;
+    font-size: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    border: solid 3px yellow;
+    transition: 0.3s ease;
+}
+
+.brand-text h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+}
+
+.brand-text p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--gap);
+}
+
+.links-col {
+    min-width: 0;
+}
+
+.links-col h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links-col a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contact {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.contact .hours {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.contact .phone {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.newsletter {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, var(--accent), #f6b400);
+    border: none;
+    color: var(--dark);
+    padding: 10px 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* Social icon animation */
+.socials a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.1);
+  color: gold;
+}
+
+/* Responsive Styles */
+@media (max-width: 880px) {
+    .footer-inner {
+        grid-template-columns: 1fr;  /* Stack columns */
+        padding: 10px;              /* Reduced padding */
+        margin-left: 0;             /* Remove margin for centering */
+    }
+
+    .footer-brand, 
+    .footer-links, 
+    .contact {
+        text-align: center;         /* Center align items */
+        margin-bottom: 20px;       /* Space between sections */
+    }
+
+    .footer-bottom {
+        flex-direction: column;     /* Stack year and socials */
+        gap: 10px; 
+        align-items: center;        /* Center align bottom items */
+        margin-top: 10px;          /* Add spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        width: 70px;  /* Adjust logo size */
+        height: 70px; /* Adjust logo size */
+    }
+
+    .brand-text h3 {
+        font-size: 18px;  /* Adjust title font size */
+    }
+}
+    </style>
+</head>
+<body>
+
+        <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" id="lux-navbar">
+        <div class="container-fluid px-4 px-lg-5">
+            <a href="index.html"><img src="img/logo34.png" alt="Logo" width="100" height="60"></a>
+            <a class="navbar-brand" href="index.html">AROMEDICA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><b>Home</b></a>
+                    </li>
+                       <li class="nav-item"><a class="nav-link" href="aboutUss.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courcespage.html">Courses</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Poses</a>
+                        <ul class="dropdown-menu">
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="allposes.html">All Poses</a></li>
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="type.html">By Type</a></li>
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="benefitposes.html">By Benefit</a></li>
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="anatomy.html">By Anatomy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Meditation.html">Meditation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                   </ul>
+                <button class="glass-lux-btn" ><a href="contact.html" style="text-decoration: none; color: white;">Sign Up</a></button>
+                <button class="glass-lux-btn"><a href="login.html" style="text-decoration: none; color: white;">Log In</a></button>
+            </div>
+        </div>
+    </nav>
+    <div class="outer-container">
+        <div class="contact-container" style="margin-top: 10px; margin-bottom: 10px;">
+            <h2 style="color: #f6b400;">About Aeromedica</h2>
+            <p class="about-aeromedica" style="color: #f6b400;">
+                Aeromedica provides exceptional air ambulance services, ensuring timely 
+                and safe medical transportation for patients in critical situations. 
+                Our dedicated team of healthcare professionals is committed to delivering 
+                the highest standard of care during every flight.
+            </p>
+            <h2 style="color: #f6b400; margin-top: 30;">Contact Us</h2>
+            <div class="contact-info">
+                <p style="color: #f6b400;"><i class="fas fa-comment-dots"></i> Message us: <strong>+1 234 567 8901</strong></p>
+                <p style="color: #f6b400;"><i class="fas fa-phone-alt" ></i> Call us: <strong>+1 234 567 8901</strong></p>
+            </div>
+        </div>
+
+        <div class="form-container" style="margin-top: 10px;margin-bottom: 10px;"">
+            <h2>Create Your Account</h2>
+            <form action="#" method="POST" onsubmit="return validateForm()">
+                <label for="name" style="color: #f6b400;">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required style="color: white;">
+
+                <label for="email" style="color: #f6b400;">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password" style="color: #f6b400;">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+                <input type="submit" value="Create Account">
+            </form>
+        </div>
+    </div>
+<!-- Footer -->
+ <!---footer started-->
+ <!-- aromedica Website Footer -->
+ <div class="col-None-12 col-sm-12 col-lg-12">
+    <footer class="site-footer" aria-labelledby="footerHeading" >
+      <div class="container-fluid">
+      <div class="footer-inner">
+        <!-- Brand & short about -->
+         <div class="col-lg-12 col-md-12 col-sm-4">
+        <div class="footer-brand" id="footerHeading">
+          <div class="footer-logo" aria-hidden="true"><a href="home.html">
+            <img src="img/logo34.png" alt="" height="100px">
+           </a></div>
+          <div class="brand-text">
+            <h3><b>AROMEDICA</b></h3>
+            <p>Aerobic exercise is one of the best ways to improve your overall health. It strengthens the heart, increases lung capacity, boosts energy, and helps burn calories effectively.</p>
+            <div style="margin-top:10px;">
+              <span class="price-pill" style="font-family: Georgia, 'Times New Roman', Times, serif;"><a href="#">"Huge Sale: 50% Discount on All Courses!"</a></span>
+            </div>
+          </div>
+        </div>
+  </div>
+        <!-- Quick links -->
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="links-col">
+            <h4>Poses</h4>
+            <ul>
+             <li><a href="mountain.html">Mountain Climbers Pose</a></li>
+            <li><a href="ButtKickers.html">Butt Kickers Pose</a></li>
+            <li><a href="highknee.html">High Knees Pose</a></li>
+            <li><a href="jumping.html">Jumping Jack Pose</a></li></ul>
+          </div>
+  
+          <div class="links-col">
+            <h4>Company</h4>
+            <ul>
+           <li><a href="cources page.html">Courses</a></li>
+            <li><a href="allposes.html">Poses</a></li>
+            <li><a href="Meditation.html">Meditation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          
+            </ul>
+          </div>
+        </nav>
+  
+        <!-- Contact & newsletter -->
+         <div class="col-lg-12 col-md-10 col-sm-2">
+        <aside class="contact" aria-label="Contact details">
+          <div class="hours"><strong>Store Hours</strong><br>Mon–Sun: 10:00 AM – 11:00 PM</div>
+          <div class="phone">📞 +92 310 276 0338</div>
+          <div style="font-size:13px;color:var(--muted)">Select your favourite Courses.</div>
+  
+          <form class="newsletter" onsubmit="event.preventDefault(); alert('Thanks — you are subscribed!');" aria-label="Subscribe to newsletter">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address"/>
+            <button class="btn-primary" type="submit">Subscribe</button>
+          </form>
+  
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+            <strong>Address</strong>
+            <div>Shop #4, Food Street,karachi</div>
+          </div>
+        </aside>
+  </div>
+        <!-- bottom row -->
+        <div class="footer-bottom" role="contentinfo">
+          <div>&copy; <strong id="yearText"></strong> AROMEDICA. All rights reserved.</div>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.facebook.com/"  target="_blank"title="Facebook">f</a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram">ig</a>
+            <a href="https://www.youtube.com/"  target="_blank" title="Twitter">t</a>
+            <a href="https://www.youtube.com/watch?v=lUuR8jyBsXI"   target="_blank" title="YouTube">yt</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </footer>
+  </div>
+  <!-- footer ended-->
+
+    <script src="
+JS	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (name === "" || email === "" || password === "") {
+                alert("All fields must be filled out.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
