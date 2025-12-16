@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .pose {
+            background-color: #444;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .pose:hover {
+            transform: scale(1.05);
+        }
+
+        .pose img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .pose h2 {
+            padding: 10px;
+            background-color: #666;
+            margin: 0;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .pose p {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            flex-grow: 1;
+        }
+
+      h1{
+        top:100px;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="pose">
+        <h2>Jumping Jacks</h2>
+        <img src="jumping jacks.jpg" alt="Jumping Jacks">
+        <p>Stand straight, jump to spread legs apart and raise arms above.</p>
+    </div>
+
+    <div class="pose">
+        <h2>High Knees</h2>
+        <img src="High knees.jpg" alt="High Knees">
+        <p>Stand straight and lift your knees up alternately as if running.</p>
+    </div>
+
+    <div class="pose">
+        <h2>Burpees</h2>
+        <img src="Burpees.jpg" alt="Burpees">
+        <p>Start standing, squat down, place hands on the ground, jump back into a push-up position, perform a push-up, then jump back and explode up.</p>
+    </div>
+
+    <div class="pose">
+        <h2>Mountain Climbers</h2>
+        <img src="Mountain climber.jpg" alt="Mountain Climbers">
+        <p>In a push-up position, alternate bringing knees to the chest rapidly.</p>
+    </div>
+
+    <div class="pose">
+        <h2>Skaters</h2>
+        <img src="skaters.jpg" alt="Skaters">
+        <p>Jump side to side, landing on one foot and bending the knee.</p>
+    </div>
+
+    <div class="pose">
+        <h2>Butt Kickers</h2>
+        <img src="butt-kickers.jpg" alt="Butt Kickers">
+        <p>Run in place while kicking your heels up to your glutes.</p>
+    </div>
+
+    <div class="pose">
+        <h2>Mountain Climbers</h2>
+        <img src="cycling.jpg" alt="Mountain Climbers">
+        <p>In a push-up position, alternate bringing knees to the chest rapidly.</p>
+    </div>
+
+    <div class="pose">
+        <h2>Skaters</h2>
+        <img src="swiming.jpg" alt="Skaters">
+        <p>Jump side to side, landing on one foot and bending the knee.</p>
+    </div>
+
+
+</div>
+</body>
+</html>
