@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AroMedica </title>
+     <link rel="icon" type="image/png" href="logo1.JPG">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #FFD700;
+            --accent-color: #D4AF37;
+            --light-color: #1a1a1a;
+            --dark-color: #000000;
+            --text-color: #e0e0e0;
+            --light-bg: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --border-color: #333333;
+        }
+     
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+              /* Common styles */
+              body {
+            background-color: black;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        #lux-navbar {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(40, 40, 40, 0.9));
+            padding: 15px 0;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .navbar-brand {
+            color: #d4af37 !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 8px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #d4af37 !important;
+        }
+
+        .glass-lux-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .glass-lux-btn:hover {
+            background: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 60px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .benefit-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .book-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 100%;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+        
+        .book-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .book-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+            z-index: 1;
+        }
+        
+        .book-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .book-card:hover .book-image img {
+            transform: scale(1.05);
+        }
+        
+        .book-info {
+            padding: 20px;
+        }
+        
+        .book-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .book-author {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .book-rating {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .amazon-btn {
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            color: var(--primary-color);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .amazon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            color: var(--primary-color);
+        }
+        
+        .meditation-technique {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .meditation-technique::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+        }
+        
+        .technique-icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .meditation-quote {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+            color: var(--text-color);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .meditation-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 60%, rgba(255, 215, 0, 0.05) 100%);
+        }
+        
+        .meditation-quote i {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer {
+            background-color: #000000;
+            color: var(--text-color);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer h5 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #1a1a1a;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            color: var(--text-color) !important;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            color: #000000 !important;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Button styles */
+        .btn-primary {
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            border: none;
+            color: #000000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+            color: #000000;
+        }
+        
+        .btn-outline-primary {
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            background: transparent;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--secondary-color);
+            color: #000000;
+            border-color: var(--secondary-color);
+        }
+        
+        /* List styles */
+        ul, ol {
+            color: var(--text-color);
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Timer styles */
+        #timerDisplay {
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .meditation-quote {
+                padding: 30px 20px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* Gold accent elements */
+        .gold-accent {
+            color: var(--secondary-color);
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0d0d0d;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #ffed4e, #e6c130);
+        }
+    
+      .dropdown-menu {
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown-item {
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            padding-left: 25px;
+        }
+ :root {
+    --bg: #000000;           /* main red */
+    --accent: #ffcc00;       /* yellow accent */
+    --dark: #1a1a1a;         /* dark text */
+    --muted: #ffffffcc;      /* muted white */
+    --panel: #ffefdd;        /* light panel for contrast */
+    --radius: 14px;
+    --gap: 18px;
+    --max-width: 1100px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; 
+    color: var(--dark);
+}
+
+.site-footer {
+    background: linear-gradient(180deg, var(--bg) 0%, #121212 100%);
+    color: #fff;
+    padding: 48px 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    box-shadow: 0px 5px 30px #000000;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    width: 100%;
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+      margin-left: 60px;
+}
+
+.footer-brand {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-logo {
+    width: 86px;
+    height: 86px;
+    background-color: #000000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: black;
+    font-size: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    border: solid 3px yellow;
+    transition: 0.3s ease;
+}
+
+.brand-text h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+}
+
+.brand-text p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--gap);
+}
+
+.links-col {
+    min-width: 0;
+}
+
+.links-col h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links-col a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contact {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.contact .hours {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.contact .phone {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.newsletter {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, var(--accent), #f6b400);
+    border: none;
+    color: var(--dark);
+    padding: 10px 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* Social icon animation */
+.socials a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.1);
+  color: gold;
+}
+
+/* Responsive Styles */
+@media (max-width: 880px) {
+    .footer-inner {
+        grid-template-columns: 1fr;  /* Stack columns */
+        padding: 10px;              /* Reduced padding */
+        margin-left: 0;             /* Remove margin for centering */
+    }
+
+    .footer-brand, 
+    .footer-links, 
+    .contact {
+        text-align: center;         /* Center align items */
+        margin-bottom: 20px;       /* Space between sections */
+    }
+
+    .footer-bottom {
+        flex-direction: column;     /* Stack year and socials */
+        gap: 10px; 
+        align-items: center;        /* Center align bottom items */
+        margin-top: 10px;          /* Add spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        width: 70px;  /* Adjust logo size */
+        height: 70px; /* Adjust logo size */
+    }
+
+    .brand-text h3 {
+        font-size: 18px;  /* Adjust title font size */
+    }
+}
+    </style>
+</head>
+<body>
+   <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" id="lux-navbar">
+        <div class="container-fluid px-4 px-lg-5">
+            <a href="index.html"><img src="img/logo34.png" alt="Logo" width="100" height="60"></a>
+            <a class="navbar-brand" href="index.html">AROMEDICA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><b>Home</b></a>
+                    </li>
+                       <li class="nav-item"><a class="nav-link" href="aboutUss.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cources page.html">Courses</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Poses</a>
+                        <ul class="dropdown-menu">
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="allposes.html">All Poses</a></li>
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="type.html">By Type</a></li>
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="benefitposes.html">By Benefit</a></li>
+                            <li style="color: #e0e0e0;"><a class="dropdown-item" href="anatomy.html">By Anatomy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Meditation.html">Meditation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    
+                </ul>
+                <button class="glass-lux-btn"><a href="signup.html" style="text-decoration: none; color: white;">Sign Up</a></button>
+                <button class="glass-lux-btn"><a href="login.html" style="text-decoration: none; color: white;">Log In</a></button>
+            </div>
+        </div>
+    </nav>
+
+   
+
+  
+  <!-- Hero Section -->
+    <section class="hero-section fade-in-up">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Meditation & Mindfulness</h1>
+                    <p class="lead mb-4">Discover the transformative power of meditation for your mind, body, and soul. Learn techniques that reduce stress, enhance focus, and promote overall well-being.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#benefits" class="btn btn-primary btn-lg px-4 py-3">Explore Benefits</a>
+                        <a href="#techniques" class="btn btn-outline-primary btn-lg px-4 py-3">Learn Techniques</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+                    <div class="position-relative">
+                        <div class="gold-border" style="width: 100%; height: 100%; position: absolute; top: 20px; left: 20px; border: 2px solid var(--secondary-color); border-radius: 15px; z-index: 0;"></div>
+                        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Meditation" class="img-fluid rounded-3 shadow position-relative" style="z-index: 1;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Meditation Section -->
+    <section class="py-5 fade-in-up" id="what-is-meditation">
+        <div class="container">
+            <h2 class="section-title">What is Meditation?</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="mb-4" style="color: white;">Meditation is a practice where an individual uses a technique – such as mindfulness, or focusing the mind on a particular object, thought, or activity – to train attention and awareness, and achieve a mentally clear and emotionally calm and stable state.</p>
+                    <p class="mb-4" style="color: white;">Contrary to popular belief, meditation isn't about stopping your thoughts or emptying your mind. Instead, it's about observing your thoughts without judgment and learning to understand them better.</p>
+                    <p style="color: white;">Regular meditation practice has been scientifically proven to reduce stress, control anxiety, enhance self-awareness, improve attention span, and may even reduce age-related memory loss.</p>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="meditation-technique text-center">
+                        <div class="technique-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Mindfulness</h4>
+                        <p style="color: white;">Being fully present in the moment, aware of where we are and what we're doing without being overly reactive or overwhelmed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-5 fade-in-up" id="benefits">
+        <div class="container">
+            <h2 class="section-title text-center">Benefits of Meditation</h2>
+            <p class="text-center mb-5" style="color: white;">Scientific research has confirmed numerous benefits of regular meditation practice for both mental and physical health.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Reduces Stress</h4>
+                        <p style="color: white;">Meditation decreases the production of cortisol, the stress hormone, helping to reduce anxiety and promote relaxation.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Improves Focus</h4>
+                        <p style="color: white;">Regular meditation enhances attention span, concentration, and the ability to perform tasks without distraction.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h4>Better Sleep</h4>
+                        <p style="color: white;">Meditation helps calm the mind and body, making it easier to fall asleep and improving sleep quality.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h4>Emotional Health</h4>
+                        <p style="color: white;">Meditation promotes emotional stability, reduces symptoms of depression, and increases overall happiness.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Boosts Immunity</h4>
+                        <p style="color: white;">Studies show that meditation can strengthen the immune system, helping the body fight off illness more effectively.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h4>Increases Compassion</h4>
+                        <p  style="color: white;">Meditation practices like loving-kindness meditation can increase empathy and compassion toward others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meditation Techniques -->
+    <section class="py-5 fade-in-up" id="techniques">
+        <div class="container">
+            <h2 class="section-title">Meditation Techniques</h2>
+            <p class="mb-5" style="color: white;">Different meditation techniques work for different people. Explore these popular methods to find what resonates with you.</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="meditation-technique">
+                        <div class="technique-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h4 style="color: white;">Mindfulness Meditation</h4>
+                        <p style="color: white;">Focus on being intensely aware of what you're sensing and feeling in the moment, without interpretation or judgment.</p>
+                        <ul class="mt-3">
+                            <li style="color: white;">Practice breathing observation</li>
+                            <li style="color: white;">Notice thoughts without engaging</li>
+                            <li style="color: white;">Return focus to the present</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="meditation-technique">
+                        <div class="technique-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Loving-Kindness Meditation</h4>
+                        <p  style="color: white;">Also known as Metta meditation, this practice involves directing well-wishes and kindness toward yourself and others.</p>
+                        <ul class="mt-3">
+                            <li style="color: white;">Start with self-compassion</li>
+                            <li style="color: white;">Extend to loved ones</li>
+                            <li style="color: white;">Include all beings worldwide</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="meditation-technique">
+                        <div class="technique-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4 style="color: white;">Focused Attention Meditation</h4>
+                        <p style="color: white;">Concentrate on a single point such as your breath, a mantra, or a visual object to train attention and awareness.</p>
+                        <ul class="mt-3">
+                            <li style="color: white;">Choose a focus point</li>
+                            <li style="color: white;">Gently return when mind wanders</li>
+                            <li style="color: white;">Build concentration stamina</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-5 fade-in-up">
+        <div class="container">
+            <h2 class="section-title text-center" style="color: white;">Guided Meditation for Beginners</h2>
+            <p class="text-center mb-5" style="color: white;">Watch this 10-minute guided meditation to experience the benefits firsthand.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="video-container">
+                        <!-- Embedded YouTube video (placeholder for actual meditation video) -->
+                        <iframe src="5-minute-meditation-you-can-do-anywhere-goodful-1080-publer.io.mp4"
+                                title="Guided Meditation for Beginners" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="text-muted mt-3 text-center" style="color: white;"><small>Video length: 10 minutes | Source: YouTube</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-5 fade-in-up">
+        <div class="container">
+            <div class="meditation-quote">
+                <i class="fas fa-quote-left"></i>
+                <p class="mb-0"  style="color: white;">Meditation is not a way of making your mind quiet. It is a way of entering into the quiet that is already there - buried under the 50,000 thoughts the average person thinks every day.</p>
+                <p class="mt-3 fw-bold gold-accent"  style="color: white;">- Deepak Chopra</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="py-5 fade-in-up" id="books">
+        <div class="container">
+            <h2 class="section-title text-center"  style="color: white;">Recommended Books on Meditation</h2>
+            <p class="text-center mb-5"  style="color: white;">Expand your meditation practice with these highly recommended books from experts in the field.</p>
+            
+            <div class="row g-4">
+                <!-- Book 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Wherever You Go, There You Are">
+                        </div>
+                        <div class="book-info">
+                            <h5 class="book-title"  style="color: white;">Wherever You Go, There You Are</h5>
+                            <p class="book-author"  style="color: white;">by Jon Kabat-Zinn</p>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-2">4.7/5</span>
+                            </div>
+                            <p  style="color: white;">A classic guide to mindfulness meditation that shows you how to embrace mindfulness in everyday life.</p>
+                            <a href="https://www.amazon.com/Wherever-You-Go-There-Are/dp/1401307787" target="_blank" class="amazon-btn mt-3">
+                                <i class="fab fa-amazon me-2"></i>View on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1112&q=80" alt="The Miracle of Mindfulness">
+                        </div>
+                        <div class="book-info">
+                            <h5 class="book-title"  style="color: white;">The Miracle of Mindfulness</h5>
+                            <p class="book-author"  style="color: white;">by Thich Nhat Hanh</p>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-muted ms-2"  style="color: white;">4.8/5</span>
+                            </div>
+                            <p  style="color: white;">A gentle introduction to the practice of mindfulness from one of the world's most respected Zen masters.</p>
+                            <a href="https://www.amazon.com/Miracle-Mindfulness-Introduction-Practice-Meditation/dp/0807012394" target="_blank" class="amazon-btn mt-3">
+                                <i class="fab fa-amazon me-2"></i>View on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1198&q=80" alt="The Headspace Guide to Meditation and Mindfulness">
+                        </div>
+                        <div class="book-info">
+                            <h5 class="book-title"  style="color: white;">The Headspace Guide to Meditation</h5>
+                            <p class="book-author"  style="color: white;">by Andy Puddicombe</p>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-muted ms-2"  style="color: white;">4.8/5</span>
+                            </div>
+                            <p  style="color: white;">A practical guide to meditation from the founder of the popular Headspace app.</p>
+                            <a href="https://www.amazon.com/Headspace-Guide-Meditation-Mindfulness-10-minutes/dp/125010490X" target="_blank" class="amazon-btn mt-3">
+                                <i class="fab fa-amazon me-2"></i>View on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Real Happiness">
+                        </div>
+                        <div class="book-info">
+                            <h5 class="book-title"  style="color: white;">Real Happiness</h5>
+                            <p class="book-author"  style="color: white;">by Sharon Salzberg</p>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-2" style="color: white;">4.5/5</span>
+                            </div>
+                            <p  style="color: white;">A 28-day meditation program designed to help beginners establish a daily practice.</p>
+                            <a href="https://www.amazon.com/Real-Happiness-Meditations-28-day-Program/dp/076115925X" target="_blank" class="amazon-btn mt-3">
+                                <i class="fab fa-amazon me-2"></i>View on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1178&q=80" alt="The Power of Now">
+                        </div>
+                        <div class="book-info">
+                            <h5 class="book-title" style="color: white;">The Power of Now</h5>
+                            <p class="book-author"  style="color: white;">by Eckhart Tolle</p>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-2"  style="color: white;">4.7/5</span>
+                            </div>
+                            <p  style="color: white;">A guide to spiritual enlightenment that emphasizes the importance of living in the present moment.</p>
+                            <a href="https://www.amazon.com/Power-Now-Guide-Spiritual-Enlightenment/dp/1577314808" target="_blank" class="amazon-btn mt-3">
+                                <i class="fab fa-amazon me-2"  style="color: white;"></i>View on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+ <!---footer started-->
+ <!-- aromedica Website Footer -->
+ <div class="col-None-12 col-sm-12 col-lg-12">
+    <footer class="site-footer" aria-labelledby="footerHeading" >
+      <div class="container-fluid">
+      <div class="footer-inner">
+        <!-- Brand & short about -->
+         <div class="col-lg-12 col-md-12 col-sm-4">
+        <div class="footer-brand" id="footerHeading">
+          <div class="footer-logo" aria-hidden="true"><a href="home.html">
+            <img src="img/logo34.png" alt="" height="100px">
+           </a></div>
+          <div class="brand-text">
+            <h3><b>AROMEDICA</b></h3>
+            <p>Aerobic exercise is one of the best ways to improve your overall health. It strengthens the heart, increases lung capacity, boosts energy, and helps burn calories effectively.</p>
+            <div style="margin-top:10px;">
+              <span class="price-pill" style="font-family: Georgia, 'Times New Roman', Times, serif;"><a href="#">"Huge Sale: 50% Discount on All Courses!"</a></span>
+            </div>
+          </div>
+        </div>
+  </div>
+        <!-- Quick links -->
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="links-col">
+            <h4>Poses</h4>
+            <ul>
+               <li><a href="mountain.html">Mountain Climbers Pose</a></li>
+            <li><a href="ButtKickers.html">Butt Kickers Pose</a></li>
+            <li><a href="highknee.html">High Knees Pose</a></li>
+            <li><a href="jumping.html">Jumping Jack Pose</a></li>
+            </ul>
+          </div>
+  
+          <div class="links-col">
+            <h4>Company</h4>
+            <ul>
+             <li><a href="cources page.html">Courses</a></li>
+            <li><a href="allposes.html">Poses</a></li>
+            <li><a href="Meditation.html">Meditation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          
+            </ul>
+          </div>
+        </nav>
+  
+        <!-- Contact & newsletter -->
+         <div class="col-lg-12 col-md-10 col-sm-2">
+        <aside class="contact" aria-label="Contact details">
+          <div class="hours"><strong>Store Hours</strong><br>Mon–Sun: 10:00 AM – 11:00 PM</div>
+          <div class="phone">📞 +92 310 276 0338</div>
+          <div style="font-size:13px;color:var(--muted)">Select your favourite Courses.</div>
+  
+          <form class="newsletter" onsubmit="event.preventDefault(); alert('Thanks — you are subscribed!');" aria-label="Subscribe to newsletter">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address"/>
+            <button class="btn-primary" type="submit">Subscribe</button>
+          </form>
+  
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+            <strong>Address</strong>
+            <div>Shop #4, Food Street,karachi</div>
+          </div>
+        </aside>
+  </div>
+        <!-- bottom row -->
+        <div class="footer-bottom" role="contentinfo">
+          <div>&copy; <strong id="yearText"></strong> AROMEDICA. All rights reserved.</div>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.facebook.com/"  target="_blank"title="Facebook">f</a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram">ig</a>
+            <a href="https://www.youtube.com/"  target="_blank" title="Twitter">t</a>
+            <a href="https://www.youtube.com/watch?v=lUuR8jyBsXI"   target="_blank" title="YouTube">yt</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </footer>
+  </div>
+  <!-- footer ended-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
