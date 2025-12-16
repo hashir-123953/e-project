@@ -1,0 +1,443 @@
+            /* Common styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #333; /* Dark grey background */
+            color: #fff; /* Text color for readability */
+        }
+
+        /* Navbar styles */
+        #lux-navbar {
+            background: linear-gradient(90deg, #1a1a1a, #2d2d2d);
+            padding: 12px 0;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid #d4af37; /* Gold line */
+        }
+
+        #lux-navbar .navbar-brand {
+            color: #d4af37;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 28px;
+        }
+
+        #lux-navbar .nav-link {
+            color: #f1f1f1 !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        #lux-navbar .nav-link:hover {
+            color: #d4af37;
+        }
+.glass-lux-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: #D4AF37;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    letter-spacing: 0px;
+    transition: 0.3s ease;
+    box-shadow: 
+        0 0 15px rgba(212, 175, 55, 0.4),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+        margin-left: 30px;
+}
+
+/* Hover effect */
+.glass-lux-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    box-shadow:
+        0 0 20px rgba(212, 175, 55, 0.6),
+        inset 0 0 15px rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+  .one{
+  background-color: lightslategray;
+  border-radius: 25%;
+  justify-content: center;
+  line-height:center ;
+  border:#d4af37 2px solid;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Dark background */
+            color: #f0f0f0;
+        }
+
+        h1 {
+            color: #fffffd; /* Gold */
+        
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 40px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: auto;
+            background: #2a2a2a; /* Dark card-like background */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .type {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 5px solid #FFD700; /* Gold accent */
+            opacity: 0; /* Start as invisible */
+            transform: translateY(20px); /* Start position for animation */
+            animation: fadeIn 0.5s forwards; /* Animation applied */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #FFD700; /* Gold */
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        p {
+            line-height: 1.5;
+            color: #e0e0e0; /* Light gray */
+            margin: 5px 0;
+        }
+
+        .pose-list {
+            list-style-type: none; /* Remove default list styles */
+            padding-left: 0; /* Remove left padding */
+            color: #e0e0e0;
+        }
+
+        .pose-list li {
+            margin: 5px 0;
+            padding: 5px;
+            background: rgba(255, 215, 0, 0.1); /* Light gold background */
+            border-radius: 5px; /* Rounded corners */
+            transition: background 0.3s, transform 0.3s; /* Transition for hover effect */
+        }
+
+        .pose-list li:hover {
+            background: rgba(255, 215, 0, 0.3); /* Darker gold on hover */
+            transform: scale(1.02); /* Slight scale effect on hover */
+
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 10px;
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem; /* Smaller font size on smaller screens */
+            }
+
+            .type {
+                padding: 10px; /* Less padding in the type sections */
+                animation: fadeIn 0.8s forwards; /* Slower animation for smaller screens */
+            }
+
+            h2 {
+                font-size: 1.5rem; /* Smaller heading size */
+            }
+
+            p {
+                font-size: 0.9rem; /* Smaller paragraph size */
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.8rem; /* Further decrease for very small screens */
+            }
+
+            h2 {
+                font-size: 1.4rem; /* Further decrease for headings */
+            }
+        }
+        
+ Dropdown items slide in from top 
+#lux-navbar .dropdown-menu {
+  transform: translateY(-20px);
+  transition: transform 0.4s ease ease-out;
+}
+
+#lux-navbar .dropdown:hover .dropdown-menu {
+  transform: translateY(0);
+}
+body{
+  margin:0px;
+}
+
+   :root{
+      --bg:#000000;           /* main red */
+      --accent:#ffcc00;       /* yellow accent */
+      --dark:#1a1a1a;         /* dark text */
+      --muted: #ffffffcc;     /* muted white */
+      --panel:#ffefdd;        /* light panel for contrast */
+      --radius:14px;
+      --gap:18px;
+      --max-width:1100px;
+      box-sizing: border-box; margin: 0%;
+      width: 100%;
+      
+      
+    }
+    *{box-sizing:inherit}
+    html,body{height:100%;margin:0;font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; color:var(--dark);}
+    .site-footer{
+      background: linear-gradient(180deg,var(--bg) 0%, #121212 100%);
+      color: #fff;
+      padding:48px 20px;
+      display:flex;
+      justify-content:center; 
+      margin: 0%;
+     box-shadow: 0px 5px 30px #000000 ;
+     border-right:2px solid red ;
+     width: 100%;
+     margin: 0px;
+     padding:0px;
+     margin-top: 20px;
+}
+
+.footer-inner {
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 40px; /* optional */
+  margin-left: 7%;
+  margin-top: 5%;
+}
+    
+
+    .footer-inner{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    /* logo & about */
+    .footer-brand{
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .footer-logo{
+      width:86px;
+      height:86px;
+      background-color: #000000;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:black;
+      font-size:18px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+      flex-shrink:0;
+       border: solid 3px yellow;
+       box-shadow: 8px 8px 20px grey ;
+       transition: 0.3s ease;
+       
+    }
+    .brand-text h3{margin:0 0 6px 0;font-size:20px;letter-spacing:0.6px ;font-family:'Montserrat', sans-serif ;}
+    .brand-text p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+
+    /* links */
+    .footer-links{
+      display:flex;
+      gap:var(--gap);
+    }
+    .links-col{min-width:0}
+    .links-col h4{margin:0 0 12px 0;font-size:15px;color:#fff}
+    .links-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .links-col a{color:var(--muted);text-decoration:none;font-size:14px;}
+    .links-col a:hover{color:#fff;text-decoration:underline}
+
+    /* contact & newsletter */
+    .contact{
+      background:rgba(255,255,255,0.06);
+      padding:16px;
+      border-radius:12px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+    .contact .hours{font-size:13px;color:var(--muted);margin-bottom:10px}
+    .contact .phone{font-weight:700;color:#fff;margin-bottom:12px;display:block}
+
+    .newsletter{
+      display:flex;
+      gap:8px;
+      margin-top:8px;
+    }
+    .newsletter input[type="email"]{
+      flex:1;
+      padding:10px 12px;
+      border-radius:8px;
+      border:0;
+      font-size:14px;
+      outline:none;
+    }
+    .btn-primary{
+      background: linear-gradient(180deg,var(--accent), #f6b400);
+      border:none;
+      color:var(--dark);
+      padding:10px 14px;
+      font-weight:700;
+      border-radius:10px;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(0,0,0,0.18);
+      border: 2px solid black;
+      line-height: 20px;
+    }
+
+    /* bottom bar */
+    .footer-bottom{
+      grid-column:1/-1;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,0.06);
+      font-size:13px;
+      color:var(--muted);
+    }
+    .socials{display:flex;gap:10px;align-items:center}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;color:#fff;font-weight:700;font-size:14px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .footer-inner{grid-template-columns:1fr;gap:14px}
+      .footer-bottom{flex-direction:column;gap:10px;align-items:flex-start}
+    }
+
+    /* small utilities */
+    .price-pill{
+      display:inline-block;
+      background:rgba(255,255,255,0.95);
+      color:var(--bg);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:14px;
+    } 
+    .site-footer {
+  animation: fadeIn 1.2s ease both;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo Glow Animation */
+.footer-logo img {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 3px gold); }
+  to   { filter: drop-shadow(0 0 12px gold); }
+}
+
+/* Fade + Slide for sections */
+.footer-brand,
+.footer-links,
+.contact,
+.footer-bottom {
+  animation: slideUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation Delay for Stagger effect */
+.footer-brand { animation-delay: 0.2s; }
+.footer-links { animation-delay: 0.35s; }
+.contact      { animation-delay: 0.5s; }
+.footer-bottom{ animation-delay: 0.65s; }
+
+/* Hover Gold Shine for Links */
+.footer-links a,
+.contact a {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.contact a:hover {
+  color: gold;
+}
+
+.footer-links .footer-logo a:hover::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, gold, transparent);
+  animation: shine 0.8s ease;
+}
+
+@keyframes shine {
+  to { left: 100%; }
+}
+
+/* Social icon animation */
+.socials a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.1);
+  color: gold;
+}
+       .line {
+    border-radius: 5%; /* Remove default border */
+    max-height: 10px; /* Set height for the divider */
+    background-color: #d4af37; /* Color of the divider */
+    margin: 10px 20px; /* Space above and below, and left and right */
+    margin-bottom: 20px;
+    margin-left: 420px ; 
+    margin-right: 420px;
+    padding-left: 360px ;
+}
